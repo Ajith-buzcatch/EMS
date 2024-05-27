@@ -1,0 +1,35 @@
+.personal-icon{
+    margin-right: 1rem;
+    font-size: 24px;
+}
+
+.left{
+    text-align: left;
+    color: gray;
+    font-size: small;
+}
+
+.right{
+    text-align: right;
+    font-weight: bold;
+    color: #293845;
+    font-size:15px;
+}
+
+.blues{
+    color:#015c7c !important
+}
+
+.table td{
+    border-top: none !important;
+    line-height: 10px;
+}
+
+.user{
+    font-size: larger;
+}
+
+.logout-icon{
+    color: red;
+    font-size: larger;
+}

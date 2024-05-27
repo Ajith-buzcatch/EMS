@@ -1,0 +1,22 @@
+.align-center{
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.icon{
+    color: #015c7c;  
+    /* #6aa9c0 */
+    font-size: larger;
+}
+
+.grey{
+    color: #f4f4f4;
+}
+
+.align-left{
+    margin-left: 18px;
+}
+

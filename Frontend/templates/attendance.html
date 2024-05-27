@@ -1,0 +1,51 @@
+{% extends "adminbase.html" %}
+
+{% block content %}
+    <div class="container-fluid content-inner mt-6 py-0">
+        <div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="header-title">
+                                <h4 class="card-title">Attendance Overview</h4>
+                            </div>
+                        </div>
+                        <div class="card-body px-0">
+                            <div class="table-responsive">
+                                <table id="datatable" class="table table-striped" data-toggle="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Check-In</th>
+                                            <th>Check-In Location</th>
+                                            <th>Check-Out</th>
+                                            <th>Check-Out Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for record in attendance_records %}
+                                            <tr>
+                                                <td>{{ record.employee.employee_name }}</td>
+                                                <td>
+                                                    {% for emp_designation in record.employee.employee_designation_set.all %}
+                                                        {{ emp_designation.designation.designation }}
+                                                    {% endfor %}
+                                                </td>
+                                                <td>{{ record.login_datetime|date:"g:i A" }}</td>
+                                                <td>{{ record.login_ipaddress }}</td>
+                                                <td>{{ record.logout_datetime|date:"g:i A" }}</td>
+                                                <td>{{ record.logout_ipaddress }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

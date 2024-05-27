@@ -1,0 +1,49 @@
+.service-top {
+    height: 100px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+.service-middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.service-box {
+    width: calc(50% - 10px);
+    height: 118px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    background-color: #fff;
+    border: 1px solid #e9e3e3;
+    border-radius: 10px;
+}
+
+
+
+.service-icon {
+    height: 40px;
+    width: 40px;
+    background-color: #ebf5ff;
+    color: #015c7c;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-icon .icon {
+    font-size: 24px;
+}
+
+.service-top .user,
+.service-top ion-icon{
+    font-size: larger;
+}

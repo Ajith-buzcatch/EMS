@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'employee/css/style.css' %}">
+    <title>Empployee|Login</title>
+    <link rel="icon" type="image/x-icon" href="{% static "employee/images/buzlogo.png" %}" >
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-top">LOGO</div>
+        <div class="main-bottom">
+            <p> Don't have an account? <a>Signup Now</a></p>
+        </div>
+        <div class="main-center">
+            <h2>Welcome back</h2>
+            <p>Enter your email and password to login</p>
+            {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+            {% endif %}
+            <form method="post" name="EmployeeLoginForm" action="{% url 'employee_login' %}">
+                {% csrf_token %}
+                <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                <a href="{% url 'password_reset' %}">Forgot password?</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

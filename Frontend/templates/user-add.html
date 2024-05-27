@@ -1,0 +1,160 @@
+{% extends "adminbase.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">New User Information</h4>
+                    </div>
+                </div>
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="profile-img-edit position-relative">
+                                <img class="profile-pic rounded avatar-100" src="" alt="profile-pic">
+                                <div class="upload-icone bg-primary">
+                                    <svg class="upload-button" width="14" height="14" viewBox="0 0 24 24">
+                                        <path fill="#ffffff" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                                    </svg>
+                                    <input name="profile_pic" class="file-upload" type="file" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="img-extension mt-3">
+                                <div class="d-inline-block align-items-center">
+                                    <span>Only</span>
+                                    <a href="javascript:void();">.jpg</a>
+                                    <a href="javascript:void();">.png</a>
+                                    <a href="javascript:void();">.jpeg</a>
+                                    <span>allowed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-label">User Role:</label>
+                                    <select name="usertype" class="selectpicker form-control" data-style="py-0" required>
+                                        <option value="">Select</option>
+                                        {% for usertype in usertypes %}
+                                            <option value="{{ usertype.id }}">{{ usertype.usertype }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="fname">First Name:</label>
+                                        <input type="text" class="form-control" id="fname" name="first_name" placeholder="First Name" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="lname">Last Name:</label>
+                                        <input type="text" class="form-control" id="lname" name="last_name" placeholder="Last Name" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="mobno">Mobile Number:</label>
+                                        <input type="text" class="form-control" id="mobno" name="mobno" placeholder="Mobile Number" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-label">Department:</label>
+                                        <select name="department" class="selectpicker form-control" data-style="py-0">
+                                            <option value="">Select Department</option>
+                                            {% for department in departments %}
+                                                <option value="{{ department.id }}">{{ department.department }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-label">Designation:</label>
+                                        <select name="designation" class="selectpicker form-control" data-style="py-0">
+                                            <option value="">Select Designation</option>
+                                            {% for designation in designations %}
+                                                <option value="{{ designation.id }}">{{ designation.designation }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-label">Country:</label>
+                                        <select name="country" class="selectpicker form-control" data-style="py-0" required>
+                                            <option value="">Select Country</option>
+                                            {% for nation in nations %}
+                                                <option value="{{ nation.id }}">{{ nation.nation }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-label">State:</label>
+                                        <select name="state" class="selectpicker form-control" data-style="py-0" required>
+                                            <option value="">Select State</option>
+                                            {% for state in states %}
+                                                <option value="{{ state.id }}">{{ state.state }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-label">City:</label>
+                                        <select name="city" class="selectpicker form-control" data-style="py-0" required>
+                                            <option value="">Select City</option>
+                                            {% for city in cities %}
+                                                <option value="{{ city.id }}">{{ city.city }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="add1">Street Address:</label>
+                                        <input type="text" class="form-control" id="add1" name="address1" placeholder="Street Address">
+                                    </div>
+                                    {% comment %} <div class="form-group col-md-6">
+                                        <label class="form-label" for="add2">Address Line 2:</label>
+                                        <input type="text" class="form-control" id="add2" name="address2" placeholder="Address Line 2">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="pno">Pincode:</label>
+                                        <input type="text" class="form-control" id="pno" name="pno" placeholder="Pincode">
+                                    </div> {% endcomment %}
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="employee_card_id">Employee Card ID:</label>
+                                        <input type="text" class="form-control" id="employee_card_id" name="employee_card_id" placeholder="Employee Card ID">
+                                    </div>
+                                </div>
+                                <hr>
+                                <h5 class="mb-3">Security</h5>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label class="form-label" for="uname">User Name:</label>
+                                        <input type="text" class="form-control" id="uname" name="uname" placeholder="User Name" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="pass">Password:</label>
+                                        <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="rpass">Repeat Password:</label>
+                                        <input type="password" class="form-control" id="rpass" name="rpass" placeholder="Repeat Password" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add New User</button>
+                    </form>                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
+

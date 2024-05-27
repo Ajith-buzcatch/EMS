@@ -1,0 +1,69 @@
+<!-- login.html template -->
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BuzCatch</title>
+    <link rel="icon" type="image/x-icon" href="{% static "images/buzlogo.png" %}" >
+
+    <link rel="shortcut icon" href="{% static "images/fav.jpg" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/fontawsom-all.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" />
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class=" no-pdding login-box">
+            <div class="row no-margin w-100 bklmj">
+                <div class="col-lg-6 col-md-6 log-det">
+                    <h2 style="margin-bottom:40px;">Employee Login</h2>
+                    <div class="text-box-cont">
+                        <form method="post" name="EmployeeLoginForm" action="{% url 'employee_login' %}">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                            </div>
+                            <!-- Display error messages here -->
+                            {% if form.errors %}
+                            <div class="error-messages">
+                                {% for field, error in form.errors.items %}
+                                {% for message in error %}
+                                <p class="text-danger">{{ message }}</p>
+                                {% endfor %}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <!-- End of error messages -->
+                            
+                            <div class="right-bkij mb-3">
+                                <input type="submit" class="btn btn-success btn-round" value="Log In">
+                            </div>
+                            
+                        </form>
+                        <div class="right-bkij mb-3">
+                
+                            <a  href="{% url 'password_reset' %}">Forgot Password</a>
+                        </div> 
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+</body>
+
+<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/script.js" %}"></script>
+
+</html>

@@ -1,0 +1,73 @@
+<!-- login.html template -->
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BuzCatch</title>
+    <link rel="icon" type="image/x-icon" href="{% static "images/buzlogo.png" %}" >
+
+    <link rel="shortcut icon" href="{% static "images/fav.jpg" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/fontawsom-all.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style1.css" %}" />
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class=" no-pdding login-box">
+            <div class="row no-margin w-100 bklmj">
+                <div class="col-lg-6 col-md-6 log-det">
+                    <h2 style="margin-bottom:40px;">OTP Verification</h2>
+                    <div class="text-box-cont">
+                        <form method="post" name="EmployeeLoginForm" action="{% url 'verify_otp' %}">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="otp" placeholder="Enter 4 Digit Otp" aria-label="Username" aria-describedby="basic-addon1" required>
+                            </div>
+                            
+                            <!-- Error messages -->
+                            {% if form.errors %}
+                            <div class="error-messages">
+                                {% for field, error_list in form.errors.items %}
+                                    {% for error in error_list %}
+                                        <p class="text-danger">{{ error }}</p>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <!-- End of error messages -->
+
+                            <!-- Info messages -->
+                            {% if messages %}
+                            <div class="info-messages">
+                                {% for message in messages %}
+                                    <p class="text-info">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <!-- End of info messages -->
+
+                            <div class="right-bkij mb-3">
+                                <input type="submit" class="btn btn-success btn-round" value="Verify">
+                            </div>
+                        </form>  
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+</body>
+
+<script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "js/popper.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/script.js" %}"></script>
+
+</html>

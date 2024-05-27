@@ -1,0 +1,535 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from templates.iqonic.design/gigz/html/dist/dashboard/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 May 2024 09:02:25 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gigz | Service Marketplace Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://templates.iqonic.design/gigz/html/dist/assets/images/favicon.ico" />
+
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="{% static "admin/css/core/libs.min.css" %}" />
+
+    <!-- Gigz Design System Css -->
+    <link rel="stylesheet" href="{% static "admin/css/gigz.mine209.css" %}" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static "admin/css/custom.mine209.css" %}" />
+
+    <!-- fontawsome Css Build -->
+    <link rel="stylesheet" href="{% static "admin/vendor/%40fortawesome/fontawesome-free/css/all.min.css" %}">
+
+    {% comment %} <link rel="stylesheet" href="../../../../../unpkg.com/swiper%4011.1.3/swiper-bundle.min.css" /> {% endcomment %}
+</head>
+
+<body class=" ">
+   
+
+    <aside class="sidebar sidebar-default navs-rounded-all ">
+        <div class="sidebar-header d-flex align-items-center justify-content-center">
+            <a href="index.html" class="navbar-brand">
+                <svg width="80" height="26" viewBox="0 0 80 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.4453 8.66406H21.875C21.1367 3.95312 17.0586 0.671874 11.75 0.671874C5.46875 0.671874 0.757813 5.28906 0.757813 13.0234C0.757813 20.6172 5.25781 25.3281 11.8789 25.3281C17.8203 25.3281 22.0742 21.5078 22.0742 15.3203V12.4375H12.3359V15.8359H17.8672C17.7969 19.2578 15.5117 21.4258 11.9023 21.4258C7.88281 21.4258 5.12891 18.4141 5.12891 12.9766C5.12891 7.57422 7.92969 4.57422 11.8086 4.57422C14.7031 4.57422 16.6719 6.12109 17.4453 8.66406ZM31.286 0.999999H26.9383V25H31.286V0.999999ZM52.7321 8.66406H57.1618C56.4235 3.95312 52.3454 0.671874 47.0368 0.671874C40.7555 0.671874 36.0446 5.28906 36.0446 13.0234C36.0446 20.6172 40.5446 25.3281 47.1657 25.3281C53.1071 25.3281 57.361 21.5078 57.361 15.3203V12.4375H47.6227V15.8359H53.154C53.0837 19.2578 50.7985 21.4258 47.1891 21.4258C43.1696 21.4258 40.4157 18.4141 40.4157 12.9766C40.4157 7.57422 43.2165 4.57422 47.0954 4.57422C49.9899 4.57422 51.9587 6.12109 52.7321 8.66406ZM61.7798 25H79.5454V21.3555H67.1821L79.4751 3.70703V0.999999H61.7095V4.64453H74.0845L61.7798 22.293V25Z"
+                        fill="#1C1F34" />
+                </svg> </a>
+            <div class="sidebar-toggle d-xl-none" data-toggle="sidebar" data-active="true">
+                <i class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.25 12.2744L19.25 12.2744" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </i>
+            </div>
+        </div>
+        <div class="sidebar-body pt-0 data-scrollbar">
+            <div class="sidebar-list">
+                <!-- Sidebar Menu Start -->
+                <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
+                    <li class="nav-item static-item">
+                        <a class="nav-link static-item disabled" href="#" tabindex="-1">
+                            <span class="default-icon">Home</span>
+                            <span class="mini-icon">-</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_index' %}" role="button" aria-expanded="false"
+                            aria-controls="home">
+                            <i class="icon">
+                                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                        d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z"
+                                        fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.53852 2H7.92449C9.32676 2 10.463 3.14585 10.463 4.55996V7.97452C10.463 9.38864 9.32676 10.5345 7.92449 10.5345H4.53852C3.13626 10.5345 2 9.38864 2 7.97452V4.55996C2 3.14585 3.13626 2 4.53852 2ZM4.53852 13.4655H7.92449C9.32676 13.4655 10.463 14.6114 10.463 16.0255V19.44C10.463 20.8532 9.32676 22 7.92449 22H4.53852C3.13626 22 2 20.8532 2 19.44V16.0255C2 14.6114 3.13626 13.4655 4.53852 13.4655ZM19.4615 13.4655H16.0755C14.6732 13.4655 13.537 14.6114 13.537 16.0255V19.44C13.537 20.8532 14.6732 22 16.0755 22H19.4615C20.8637 22 22 20.8532 22 19.44V16.0255C22 14.6114 20.8637 13.4655 19.4615 13.4655Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </i>
+                            <span class="item-name">Dashboard</span>
+                        </a>
+
+                    </li>
+                   
+                    <li>
+                        <hr class="hr-horizontal">
+                    </li>
+                    <li class="nav-item static-item">
+                        <a class="nav-link static-item disabled" href="#" tabindex="-1">
+                            <span class="default-icon">Employee</span>
+                            <span class="mini-icon">-</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui" role="button" aria-expanded="false"
+                            aria-controls="utilities-error">
+                            <i class="icon">
+                                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                        d="M2 11.0786C2.05 13.4166 2.19 17.4156 2.21 17.8566C2.281 18.7996 2.642 19.7526 3.204 20.4246C3.986 21.3676 4.949 21.7886 6.292 21.7886C8.148 21.7986 10.194 21.7986 12.181 21.7986C14.176 21.7986 16.112 21.7986 17.747 21.7886C19.071 21.7886 20.064 21.3566 20.836 20.4246C21.398 19.7526 21.759 18.7896 21.81 17.8566C21.83 17.4856 21.93 13.1446 21.99 11.0786H2Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M11.2451 15.3843V16.6783C11.2451 17.0923 11.5811 17.4283 11.9951 17.4283C12.4091 17.4283 12.7451 17.0923 12.7451 16.6783V15.3843C12.7451 14.9703 12.4091 14.6343 11.9951 14.6343C11.5811 14.6343 11.2451 14.9703 11.2451 15.3843Z"
+                                        fill="currentColor"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M10.211 14.5565C10.111 14.9195 9.762 15.1515 9.384 15.1015C6.833 14.7455 4.395 13.8405 2.337 12.4815C2.126 12.3435 2 12.1075 2 11.8555V8.38949C2 6.28949 3.712 4.58149 5.817 4.58149H7.784C7.972 3.12949 9.202 2.00049 10.704 2.00049H13.286C14.787 2.00049 16.018 3.12949 16.206 4.58149H18.183C20.282 4.58149 21.99 6.28949 21.99 8.38949V11.8555C21.99 12.1075 21.863 12.3425 21.654 12.4815C19.592 13.8465 17.144 14.7555 14.576 15.1105C14.541 15.1155 14.507 15.1175 14.473 15.1175C14.134 15.1175 13.831 14.8885 13.746 14.5525C13.544 13.7565 12.821 13.1995 11.99 13.1995C11.148 13.1995 10.433 13.7445 10.211 14.5565ZM13.286 3.50049H10.704C10.031 3.50049 9.469 3.96049 9.301 4.58149H14.688C14.52 3.96049 13.958 3.50049 13.286 3.50049Z"
+                                        fill="currentColor">
+                                    </path>
+                                </svg>
+                            </i>
+                            <span class="item-name">Main</span>
+                            <i class="right-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </i>
+                        </a>
+                        <ul class="sub-nav collapse" id="ui" data-parent="#sidebar">
+                            <li class="nav-item">
+                                <a class="nav-link " href="{% url "useradd" %}">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> A</i>
+                                    <span class="item-name">Add Employee</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="{% url "userlist" %}">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> A</i>
+                                    <span class="item-name">Overview</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                            
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-table" role="button"
+                            aria-expanded="false" aria-controls="sidebar-table">
+                            <i class="icon">
+                                <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 6C2 5.44772 2.44772 5 3 5H8V9H2V6Z" fill="#130F26" />
+                                    <path d="M9 5H15V9H9V5Z" fill="#130F26" />
+                                    <path d="M16 5H21C21.5523 5 22 5.44772 22 6V9H16V5Z" fill="#130F26" />
+                                    <path d="M2 10H8V14H2V10Z" fill="#130F26" fill-opacity="0.4" />
+                                    <path d="M9 10H15V14H9V10Z" fill="#130F26" fill-opacity="0.4" />
+                                    <path d="M16 10H22V14H16V10Z" fill="#130F26" fill-opacity="0.4" />
+                                    <path d="M2 15H8V19H3C2.44772 19 2 18.5523 2 18V15Z" fill="#130F26"
+                                        fill-opacity="0.4" />
+                                    <path d="M9 15H15V19H9V15Z" fill="#130F26" fill-opacity="0.4" />
+                                    <path d="M16 15H22V18C22 18.5523 21.5523 19 21 19H16V15Z" fill="#130F26"
+                                        fill-opacity="0.4" />
+                                </svg>
+                            </i>
+                            <span class="item-name">Attendance</span>
+                            <i class="right-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </i>
+                        </a>
+                        <ul class="sub-nav collapse" id="sidebar-table" data-bs-parent="#sidebar-menu">
+                            <li class="nav-item">
+                                <a class="nav-link " href="{% url "attendance_overview" %}">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> B </i>
+                                    <span class="item-name">Attendance Overview</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="table/table-data.html">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> D </i>
+                                    <span class="item-name">Attendance Muster</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="table/table-data.html">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> D </i>
+                                    <span class="item-name">Attendance Regulariztion</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item mb-5">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-icons" role="button"
+                            aria-expanded="false" aria-controls="sidebar-icons">
+                            <i class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M8 10.5378C8 9.43327 8.89543 8.53784 10 8.53784H11.3333C12.4379 8.53784 13.3333 9.43327 13.3333 10.5378V19.8285C13.3333 20.9331 14.2288 21.8285 15.3333 21.8285H16C16 21.8285 12.7624 23.323 10.6667 22.9361C10.1372 22.8384 9.52234 22.5913 9.01654 22.3553C8.37357 22.0553 8 21.3927 8 20.6832V10.5378Z"
+                                        fill="currentColor" />
+                                    <rect opacity="0.4" x="8" y="1" width="5" height="5" rx="2.5" fill="currentColor" />
+                                </svg>
+                            </i>
+                            <span class="item-name">Resignation</span>
+                            <i class="right-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </i>
+                        </a>
+                        <ul class="sub-nav collapse" id="sidebar-icons" data-bs-parent="#sidebar-menu">
+                            <li class="nav-item">
+                                <a class="nav-link " href="icons/solid.html">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> S </i>
+                                    <span class="item-name">Employee Resignation</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="icons/outline.html">
+                                    <i class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <g>
+                                                <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                            </g>
+                                        </svg>
+                                    </i>
+                                    <i class="sidenav-mini-icon"> O </i>
+                                    <span class="item-name">Outlined</span></a>
+                            </li>
+                            
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- Sidebar Menu End -->
+
+            </div>
+            <div class="p-2 "></div>
+        </div>
+
+
+    </aside>
+
+
+    <main class="main-content">
+        <div class="position-relative">
+            <!--Nav Start-->
+            <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar py-lg-0">
+                <div class="container-fluid navbar-inner">
+                    <a href="index.html" class="navbar-brand">
+                        <svg width="80" height="26" viewBox="0 0 80 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.4453 8.66406H21.875C21.1367 3.95312 17.0586 0.671874 11.75 0.671874C5.46875 0.671874 0.757813 5.28906 0.757813 13.0234C0.757813 20.6172 5.25781 25.3281 11.8789 25.3281C17.8203 25.3281 22.0742 21.5078 22.0742 15.3203V12.4375H12.3359V15.8359H17.8672C17.7969 19.2578 15.5117 21.4258 11.9023 21.4258C7.88281 21.4258 5.12891 18.4141 5.12891 12.9766C5.12891 7.57422 7.92969 4.57422 11.8086 4.57422C14.7031 4.57422 16.6719 6.12109 17.4453 8.66406ZM31.286 0.999999H26.9383V25H31.286V0.999999ZM52.7321 8.66406H57.1618C56.4235 3.95312 52.3454 0.671874 47.0368 0.671874C40.7555 0.671874 36.0446 5.28906 36.0446 13.0234C36.0446 20.6172 40.5446 25.3281 47.1657 25.3281C53.1071 25.3281 57.361 21.5078 57.361 15.3203V12.4375H47.6227V15.8359H53.154C53.0837 19.2578 50.7985 21.4258 47.1891 21.4258C43.1696 21.4258 40.4157 18.4141 40.4157 12.9766C40.4157 7.57422 43.2165 4.57422 47.0954 4.57422C49.9899 4.57422 51.9587 6.12109 52.7321 8.66406ZM61.7798 25H79.5454V21.3555H67.1821L79.4751 3.70703V0.999999H61.7095V4.64453H74.0845L61.7798 22.293V25Z"
+                                fill="#1C1F34" />
+                        </svg> </a>
+                    <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
+                        <i class="icon">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                            </svg>
+                        </i>
+                    </div>
+                    <div class="input-group search-input">
+                        <span class="input-group-text" id="search-input">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse rx="9.10146" ry="8.88476" transform="matrix(-1 0 0 1 10.8985 9.88498)"
+                                    stroke="#8A93AD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M4.56836 16.5259L1.00007 20.0002" stroke="#8A93AD" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <input type="search" class="form-control" placeholder="Search...">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span class="navbar-toggler-bar bar1 mt-2"></span>
+                            <span class="navbar-toggler-bar bar2"></span>
+                            <span class="navbar-toggler-bar bar3"></span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto top-menu navbar-nav align-items-center navbar-list mb-3 mb-lg-0">                         
+                            <li>
+                                <ul class="m-0 d-flex align-items-center navbar-list list-unstyled px-3 px-md-0">
+                                    <li class="nav-item dropdown ms-0 ms-md-5 me-2">
+                                        <a href="#" class="nav-link" id="mail-drop" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <svg width="24" viewBox="0 0 30 26" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.8705 8.80127L16.9461 13.6187C15.8267 14.5067 14.2519 14.5067 13.1326 13.6187L7.1582 8.80127"
+                                                    stroke="#8A93AD" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M21.5445 24.9999C25.5996 25.0112 28.3327 21.6794 28.3327 17.5845V8.42668C28.3327 4.33177 25.5996 1 21.5445 1H8.4542C4.39906 1 1.66602 4.33177 1.66602 8.42668V17.5845C1.66602 21.6794 4.39906 25.0112 8.4542 24.9999H21.5445Z"
+                                                    stroke="#8A93AD" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="bg-primary count-mail"></span>
+                                        </a>
+                                        <div class="sub-drop dropdown-menu dropdown-menu-end p-0"
+                                            aria-labelledby="mail-drop">
+                                            <div class="card shadow-none m-0">
+                                                <div
+                                                    class="card-header d-flex justify-content-between bg-primary py-3 rounded">
+                                                    <div class="header-title">
+                                                        <h5 class="mb-0 text-white">All Message</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body p-0 ">
+                                                    <a href="#" class="iq-sub-card">
+                                                        <div class="d-flex  align-items-center">
+                                                            <div class="">
+                                                                <img class="avatar-40 rounded-pill bg-soft-primary p-1"
+                                                                    src="../assets/images/icons/03.png" alt="">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="mb-0 ">Bni Emma Watson</h6>
+                                                                <small class="float-start font-size-12">13 Jun</small>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="iq-sub-card">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="">
+                                                                <img class="avatar-40 rounded-pill bg-soft-primary p-1"
+                                                                    src="../assets/images/avatars/02.png" alt="">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
+                                                                <small class="float-start font-size-12">20 Apr</small>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="iq-sub-card">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="">
+                                                                <img class="avatar-40 rounded-pill bg-soft-primary p-1"
+                                                                    src="../assets/images/avatars/03.png" alt="">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="mb-0 ">Why do we use it?</h6>
+                                                                <small class="float-start font-size-12">30 Jun</small>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="iq-sub-card">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="">
+                                                                <img class="avatar-40 rounded-pill bg-soft-primary p-1"
+                                                                    src="../assets/images/avatars/04.png" alt="">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="mb-0 ">Variations Passages</h6>
+                                                                <small class="float-start font-size-12">12 Sep</small>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="iq-sub-card">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="">
+                                                                <img class="avatar-40 rounded-pill bg-soft-primary p-1"
+                                                                    src="../assets/images/icons/02.png" alt="">
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="mb-0 ">Lorem Ipsum generators</h6>
+                                                                <small class="float-start font-size-12">5 Dec</small>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="nav-link py-0 d-flex align-items-center" href="#" id="navbarDropdown3"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="../assets/images/avatars/01.png" alt="User-Profile"
+                                                class="img-fluid avatar avatar-50 avatar-rounded">
+                                        </a>
+                                        <ul class="dropdown-menu  dropdown-menu-lg-end"
+                                            aria-labelledby="navbarDropdown3">
+                                            <li><a class="dropdown-item" href="app/user-profile.html">My Profile</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="app/user-privacy-setting.html">Privacy
+                                                    Setting</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="auth/sign-in.html">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav> <!--Nav End-->
+        </div>
+        
+        <!-- Dyanmic content -->
+
+        {% block content  %}
+        
+        {% endblock %}
+
+        <footer class="footer py-3 border-top">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-7">
+                        <div class="">
+                            <h2 class="">GIGZ</h2>
+                        </div>
+                        <div class="right-panel">
+                            ©
+                            <script
+                                type="a7640a56831629288fa016ed-text/javascript">document.write(new Date().getFullYear())</script>
+                            GIGZ, Made with
+                            <span class="text-danger">
+                                <svg width="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M15.85 2.50065C16.481 2.50065 17.111 2.58965 17.71 2.79065C21.401 3.99065 22.731 8.04065 21.62 11.5806C20.99 13.3896 19.96 15.0406 18.611 16.3896C16.68 18.2596 14.561 19.9196 12.28 21.3496L12.03 21.5006L11.77 21.3396C9.48102 19.9196 7.35002 18.2596 5.40102 16.3796C4.06102 15.0306 3.03002 13.3896 2.39002 11.5806C1.26002 8.04065 2.59002 3.99065 6.32102 2.76965C6.61102 2.66965 6.91002 2.59965 7.21002 2.56065H7.33002C7.61102 2.51965 7.89002 2.50065 8.17002 2.50065H8.28002C8.91002 2.51965 9.52002 2.62965 10.111 2.83065H10.17C10.21 2.84965 10.24 2.87065 10.26 2.88965C10.481 2.96065 10.69 3.04065 10.89 3.15065L11.27 3.32065C11.3618 3.36962 11.4649 3.44445 11.554 3.50912C11.6104 3.55009 11.6612 3.58699 11.7 3.61065C11.7163 3.62028 11.7329 3.62996 11.7496 3.63972C11.8354 3.68977 11.9247 3.74191 12 3.79965C13.111 2.95065 14.46 2.49065 15.85 2.50065ZM18.51 9.70065C18.92 9.68965 19.27 9.36065 19.3 8.93965V8.82065C19.33 7.41965 18.481 6.15065 17.19 5.66065C16.78 5.51965 16.33 5.74065 16.18 6.16065C16.04 6.58065 16.26 7.04065 16.68 7.18965C17.321 7.42965 17.75 8.06065 17.75 8.75965V8.79065C17.731 9.01965 17.8 9.24065 17.94 9.41065C18.08 9.58065 18.29 9.67965 18.51 9.70065Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span> by <a target="_blank" href="https://iqonic.design/">IQONIC Design</a>.
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <ul class="list-group list-group-horizontal list-group-flush">
+                            <li class="list-inline">
+                                <a href="javascript:void(0)"><img
+                                        src="https://templates.iqonic.design/gigz/html/dist/assets/images/brands/gm.svg"
+                                        alt="gm"></a>
+                            </li>
+                            <li class="list-inline">
+                                <a href="javascript:void(0)"><img
+                                        src="https://templates.iqonic.design/gigz/html/dist/assets/images/brands/fb.svg"
+                                        alt="fb"></a>
+                            </li>
+                            <li class="list-inline">
+                                <a href="javascript:void(0)"><img
+                                        src="https://templates.iqonic.design/gigz/html/dist/assets/images/brands/im.svg"
+                                        alt="im"></a>
+                            </li>
+                            <li class="list-inline">
+                                <a href="javascript:void(0)"><img
+                                        src="https://templates.iqonic.design/gigz/html/dist/assets/images/brands/li.svg"
+                                        alt="li"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Library Bundle Script -->
+    <script src="{% static "admin/js/core/libs.min.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- External Library Bundle Script -->
+    <script src="{% static "admin/js/core/external.min.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- Widgetchart Script -->
+    <script src="{% static "admin/js/charts/widgetcharts.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- mapchart Script -->
+    <script src="{% static "admin/js/charts/vectore-chart.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+    <script src="{% static "admin/js/charts/dashboard.js" %}" defer type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- fslightbox Script -->
+    <script src="{% static "admin/js/plugins/fslightbox.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- GSAP Animation -->
+    <script src="{% static "admin/vendor/gsap/gsap.min.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+    <script src="{% static "admin/vendor/gsap/ScrollTrigger.min.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+    <script src="{% static "admin/js/gsap-init.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- Form Wizard Script -->
+    <script src="{% static "admin/js/plugins/form-wizard.js" %}" type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- App Script -->
+    <script src="{% static "admin/js/gigz.js" %}" defer type="a7640a56831629288fa016ed-text/javascript"></script>
+
+    <!-- Swiper JS -->
+    {% comment %} <script src="../../../../../unpkg.com/swiper%4011.1.3/swiper-bundle.min.js"
+        type="a7640a56831629288fa016ed-text/javascript"></script> {% endcomment %}
+    <script src="{% static "admin/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" %}"
+        data-cf-settings="a7640a56831629288fa016ed-|49" defer></script>
+</body>
+
+<!-- Mirrored from templates.iqonic.design/gigz/html/dist/dashboard/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 May 2024 09:02:55 GMT -->
+
+</html>
